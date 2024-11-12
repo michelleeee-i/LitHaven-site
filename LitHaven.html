@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LITHAVEN</title>
+    <!-- FontAwesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        /* Navbar background and text color */
+        .nav-wrapper {
+            background-color: #01579b; /*  light-blue darken-4 color */
+        }
+
+
+
+
+        .nav-wrapper a {
+            color: #ffffff; /* White text for links */
+        }
+
+
+
+
+        .LITHAVEN {
+            font-family:'Times New Roman', Times, serif;
+            font-size: 1.5em;
+            color: #ffffff; /* White color for brand name */
+        }
+
+
+
+
+        .input-field input[type="search"] {
+            color: #ffffff; /* White text inside search bar */
+        }
+
+
+
+
+        /* Optional: Style the search input and icon */
+        .search-icon {
+            color: blue;
+            font-size: 24px;
+            margin-right: 5px;
+        }
+        /* Ensuring all cards have the same height */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Adjust gap between the cards */
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.card-image {
+    flex-grow: 5;  /* Allow the image to take up remaining space */
+    object-fit: cover; /* Ensures images scale nicely */
+}
+
+
+.card-content, .card-reveal {
+    flex-shrink: 20; /* Prevent shrinking of the content */
+}
+
+
+.card .card-reveal {
+    padding: 20px;
+}
+
+
+.card-content p {
+    margin: 5;
+}
+
+
+.card .activator {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+.white-text {
+    color: white !important; /* Ensures the text is white */
+}
+
+
+/* Optional: Adds uniform height to cards */
+.card {
+    height: 300px; /* Set a fixed height for all cards */
+}
+
+
+.card-image img {
+    height: 300px; /* Fixed height for images */
+    object-fit: cover; /* Maintain image aspect ratio */
+}
+
+
+/* Social Media Container Styling */
+.social-media-container {
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 5px;
+}
+/* Center align the header */
+.social-media-container h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+/* Center the paragraph text */
+.social-media-container p {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 20px;
+}
+        .social-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4;  /* Optional background color */
+    border-radius: 10px;  /* Optional for rounded corners */
+}
+
+
+.social-icons {
+    color: #007bff;
+    display: flexbox;
+    gap: 15px; /* Spacing between the icons */
+}
+
+
+.social-icon {
+    font-size: 24px;  /* Size of the social media icons */
+    color: #007bff;  /* #Icon color */
+    transition: color 0.3s ease;  /* Smooth color transition on hover */
+}
+
+
+.social-icons {
+    color: #007bff;  /* Hover color */
+}
+
+
+
+
+    </style>
+</head>
+
+
+
+
+<body>
+    <!-- Dropdown Structure for "Genre" -->
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="/fantasy">Fantasy</a></li>
+        <li class="divider"></li>
+        <li><a href="mystery">Mystery</a></li>
+        <li class="divider"></li>
+        <li><a href="romance">Romance</a></li>
+        <li class="divider"></li>
+        <li><a href="sciencefiction">Science Fiction</a></li>
+    </ul>
+
+
+
+
+    <!-- Dropdown Structure for "Author" -->
+    <ul id="dropdown3" class="dropdown-content">
+        <li><a href="https://www.goodreads.com/book/show/136251.Harry_Potter_and_the_Deathly_Hallows"">J.K. Rowling</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">George R.R. Martin</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Agatha Christie</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Isaac Asimov</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Nick Joaquin</a></li>
+    </ul>
+
+
+
+
+    <!-- Dropdown Structure for "Country" -->
+    <ul id="dropdown4" class="dropdown-content">
+        <li><a href="#!">Philippines</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">India</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Eygypt</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">United Kingdom</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">United States</a></li>
+    </ul>
+
+
+
+
+     <!-- Main Navigation Bar -->
+     <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="LITHAVEN">LITHAVENS</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+
+
+                <!-- Dropdown for Genre without the arrow icon -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Genre</a></li>
+
+
+
+
+                <!-- Dropdown for Author without the arrow icon -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">Author</a></li>
+
+
+
+
+                <!-- Dropdown for Country without the arrow icon -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown4">Country</a></li>
+
+
+                <!-- Search form within the same nav-wrapper  -->
+            <li>
+                <form class="right">
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i> <!-- Close icon for clearing input -->
+                    </div>
+                </form>
+            </li>
+
+
+            <!-- Account dropdown -->
+            <li><a class="dropdown-trigger account-icon" href="#!" data-target="dropdown5"><i class="material-icons">account_circle</i></a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+
+            <!-- Dropdown Structure for "Account" -->
+            <ul id="dropdown5" class="dropdown-content">
+               <li><a href="/signin">Sign in</a></li>
+               <li class="divider"></li>
+               <li><a href="signup">Sign up</a></li>
+            </ul>
+      </div>
+</nav>
+</nav>
+    </nav>
+
+
+
+
+   <!-- First Content Container -->
+    <div class="container light-blue accent-1 white-text" style="padding: 20px; border-radius: 8px; margin-top: 20px;">
+    <!-- Centered Welcome Message -->
+    <header class="center-align" style="margin-bottom: 20px;">
+      <h1 class="white-text">WELCOME TO LITHAVEN</h1>
+    </header>
+    <!-- About Section with Image and Text -->
+    <div class="row valign-wrapper">
+      <!-- Left Column for Image -->
+      <div class="col s12 m4">
+        <img src="lithaven logo.jpg" alt="Logo" class="circle responsive-img"> <!--notice the "circle" class-->
+      </div>
+      <!-- Right Column for Text -->
+      <div class="col s12 m8">
+        <h2 class="right-align">About Our Library</h2>
+        <p class="right-align">Our library offers a wide variety of books for all readers. Explore our catalog and find your next favorite book.</p>
+      </div>
+    </div>
+  </div>
+  <head>
+    <!-- Other head elements like title, meta, etc. -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <i class="material-icons right">more_vert</i>   <!-- This is the icon for the 'more' menu -->
+  <i class="material-icons right">close</i>      <!-- This is the icon for closing the card reveal -->
+   <!-- Second Content Container -->
+<div class="container light-blue accent-1 white-text" style="padding: 20px; border-radius: 8px; margin-top: 20px;">
+ 
+  <!-- First Row to hold 4 cards -->
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col s12 m6 l3">
+      <div class="card  light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="materialboxed" width="650" src="harry potter.png">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator  light-blue accent-1">
+            Harry Potter<i class="material-icons right">more_vert</i>
+            </span>  
+            <!--Wrap the author name in the anchor tag-->    
+            <p class="white-text">
+                <a href="https://www.goodreads.com/book/show/136251.Harry_Potter_and_the_Deathly_Hallows">J.K. Rowling</a>
+            </p>
+        </div>
+        <div class="card-reveal  light-blue accent-1">
+            <span class="card-title  light-blue accent-1">Genre: Fantasy<i class="material-icons right">close</i></span>
+          <p>Harry has been burdened with a dark, dangerous and seemingly impossible task: that of locating and destroying Voldemort's remaining Horcruxes. Never has Harry felt so alone, or faced a future so full of shadows. But Harry must somehow find within himself the strength to complete the task he has been given. He must leave the warmth, safety and companionship of The Burrow and follow without fear or hesitation the inexorable path laid out for him.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Card 2 -->
+    <div class="col s12 m6 l3">
+      <div class="card light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="materialboxed" width="650" src="may day eve.png">
+        </div>
+        <div class="card-content  light-blue accent-1">
+          <span class="card-title activator">May Day Eve<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/13480861-may-day-eve-and-other-stories">Nick Joaquin</a></p>
+        </div>
+        <div class="card-reveal light-blue accent-1">
+          <span class="card-title">Genre: Fiction<i class="material-icons right">close</i></span>
+          <p>May Day Eve and Other Stories is a quintet of unsettling tales of mystery, religious zeal, and passion. It features the title story “May Day Eve” as well as “Three Generations,” “Doña Jeronima,” “The Legend of the Dying Wanton,” and “Guardia de Honor.”
+
+
+            Set during the Spanish colonial period, these narratives tap into the qualities of magic realism, romance, and historical fiction, as only the master Nick Joaquin can.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Card 3 -->
+    <div class="col s12 m6 l3">
+      <div class="card  light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="florante at laura.png" alt="Card Image 3">
+        </div>
+        <div class="card-content light-blue accent-1">
+          <span class="card-title activator">Florante at Laura<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/1848283.Florante_at_Laura">Francisco Balagtas</a></p>
+        </div>
+        <div class="card-reveal light-blue accent-1">
+          <span class="card-title">Genre: Classical Romance <i class="material-icons right">close</i></span>
+          <p>"Florante at Laura" by Francisco Balagtas is a classic narrative poem considered a significant work of Filipino literature written in the mid-19th century. The poem narrates the story of Florante, a nobleman, and his beloved Laura, set against the backdrop of the kingdom of Albania. The overarching themes delve into love, betrayal, and the quest for justice, reflecting the societal issues present during Balagtas's time.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Card 4 -->
+    <div class="col s12 m6 l3">
+      <div class="card  light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="noli.png" alt="Card Image 4">
+        </div>
+        <div class="card-content light-blue accent-1 ">
+          <span class="card-title activator">Noli Me Tangere<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/418285">Jose Rizal</a></p>
+        </div>
+        <div class="card-reveal light-blue accent-1">
+          <span class="card-title">Genre: Historical Fiction<i class="material-icons right">close</i></span>
+          <p>In more than a century since its appearance, José Rizal's Noli Me Tangere has become widely known as the great novel of the Philippines. A passionate love story set against the ugly political backdrop of repression, torture, and murder, "The Noli," as it is called in the Philippines, was the first major artistic manifestation of Asian resistance to European colonialism, and Rizal became a guiding conscience—and martyr—for the revolution that would subsequently rise up in the Spanish province.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Second Row to hold 4 more cards -->
+  <div class="row">
+    <!-- Card 5 -->
+    <div class="col s12 m6 l3">
+      <div class="card light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="atpoy.png" alt="Card Image 5">
+        </div>
+        <div class="card-content light-blue accent-1">
+          <span class="card-title activator">A Thousand Pieces of You<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/17234658">Claudia Gray</a></p>
+        </div>
+        <div class="card-reveal light-blue accent-1">
+          <span class="card-title">Genre: Sci-Fi<i class="material-icons right">close</i></span>
+          <p>Marguerite Caine's parents are physicists, who created the Firebird which allows users to jump into parallel universes, some vastly altered from our own. But when Marguerite's father is murdered, the killer - her parent's handsome and enigmatic assistant Paul - escapes into another dimension before the law can touch him.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Card 6 -->
+    <div class="col s12 m6 l3">
+      <div class="card  light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="flipped.png" alt="Card Image 6">
+        </div>
+        <div class="card-content light-blue accent-1 ">
+          <span class="card-title activator">Flipped<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/331920">Wendelin Van Draanen</a></p>
+        </div>
+        <div class="card-reveal light-blue accent-1">
+          <span class="card-title">Genre: Young Adult<i class="material-icons right">close</i></span>
+          <p>Flipped is a romance told in two voices. The first time Juli Baker saw Bryce Loski, she flipped. The first time Bryce saw Juli, he ran. That's pretty much the pattern for these two neighbors until the eighth grade, when, just as Juli is realizing Bryce isn't as wonderful as she thought, Bryce is starting to see that Juli is pretty amazing. How these two teens manage to see beyond the surface of things and come together makes for a comic and poignant romance.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Card 7 -->
+    <div class="col s12 m6 l3">
+      <div class="card  light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="little prince.jpg" alt="Card Image 7">
+        </div>
+        <div class="card-content  light-blue accent-1">
+          <span class="card-title activator">The Little Prince</span><i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/157993">Antoine De Saint-Exupery</a></p>
+        </div>
+        <div class="card-reveal  light-blue accent-1">
+          <span class="card-title">Genre: Fiction<i class="material-icons right">close</i></span>
+          <p>A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. "Please," asks the stranger, "draw me a sheep." And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.</p>
+        </div>
+      </div>
+    </div>
+<!-- Card 8 -->
+    <div class="col s12 m6 l3">
+      <div class="card  light-blue accent-1">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="el fili.jpg" alt="Card Image 8">
+        </div>
+        <div class="card-content  light-blue accent-1">
+          <span class="card-title activator">El Filibusterismo<i class="material-icons right">more_vert</i></span>
+          <p><a href="https://www.goodreads.com/book/show/36250472">Jose Rizal</a></p>
+        </div>
+        <div class="card-reveal  light-blue accent-1">
+          <span class="card-title">Genre: Historical Fiction<i class="material-icons right">close</i></span>
+          <p>El Filibusterismo continues the story of Crisostomo Ibarra in the person of Simoun, the rich jeweler, who returns to the Philippines after a 13-year old absence. Simoun, who is plotting a revolution against the Spanish government and attempts to rescue Maria Clara from the nunnery, will do what it takes to avenge the wrongs that were done to him.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<br>
+<div class="social-container">
+    <div class="container social-media-container">
+        <h4 class="left-aligned">Contact Our Customer Service</h4>
+        <p class="black-text">Have any questions or need assistance? Reach us through our social media channels!</p>
+       
+        <div class="social-icons center-align">
+            <!-- Facebook Icon -->
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+           
+            <!-- Twitter Icon -->
+            <a href="https://twitter.com" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+           
+            <!-- Instagram Icon -->
+            <a href="https://instagram.com" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+           
+            <!-- Gmail Icon (using FontAwesome's envelope icon) -->
+            <a href="mailto:your-email@example.com" target="_blank" class="social-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</div>
+     <!-- Materialize JS (Ensure to place these at the bottom for better performance) -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+ 
+     <script>
+         // Initialize all dropdowns
+         document.addEventListener('DOMContentLoaded', function () {
+             M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'));
+         });
+     </script>
+ </body>
+ 
+
+
+</div>
+</body>
+</html>
